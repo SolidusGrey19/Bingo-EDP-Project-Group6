@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #425B9A;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #FF95A5;
+}
+
+.mydiv {
+  border: 10px solid #76C0EC;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: #FFF6DC;
+}
+
+button:hover {
+  background-color: #ff0000;
+  color: #5C7057;
+}

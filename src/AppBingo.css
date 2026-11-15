@@ -1,0 +1,34 @@
+.bingo-page {
+  justify-content: flex-start;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.bingo-rule {
+  margin-top: 0;
+}
+
+.bingo-panel {
+  color: #425B9A;
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 15px;
+}
+
+.bingo-last {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e0556d;
+}
+
+.bingo-result {
+  color: green;
+}
+
+.bingo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 10px;
+}
