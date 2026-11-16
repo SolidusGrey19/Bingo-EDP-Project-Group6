@@ -35,7 +35,25 @@ function Bingo() {
   const [winner, setWinner] = useState(''); // '', 'player', 'bot', 'tie'
   const [playerCards, setPlayerCards] = useState(() => generateThreeCards());
   const [botCards, setBotCards] = useState(() => generateThreeCards());
+  const [lastNumber, setLastNumber] = useState(null);
+  const [remainingNumbers, setRemainingNumbers] = useState(
+  Array.from({ length: 75 }, (_, i) => i + 1)
+);
+  const drawNumber = () => {
+    if (remainingNumbers.length === 0 || winner) return;
 
+    const randomIndex = Math.floor(Math.random() * remainingNumbers.length);
+    const number = remainingNumbers[randomIndex];
+
+    setLastNumber(number);
+    setCalled(prev => [...prev, number]);
+    setRemainingNumbers(prev =>
+      prev.filter(n => n !== number)
+    );
+  };
+
+  
+  
   // Helper to render a single 5x5 card as a <table>
   const renderCard = (card, cardIndex) => (
     <table key={cardIndex} className="bingo-card">
@@ -68,6 +86,8 @@ function Bingo() {
     </table>
   );
 
+
+
   return (
     <div className="App">
       <header className="App-header bingo-page">
@@ -75,6 +95,32 @@ function Bingo() {
         <p className="bingo-rule">
           Win by completing a row, column, diagonal, or the 4 corners.
         </p>
+
+    <div className="mydiv bingo-panel">
+  <h2>Number Randomizer</h2>
+
+  <h1 style={{ fontSize: '60px', color: '#ffc107' }}>
+    {lastNumber || '--'}
+  </h1>
+
+  <button
+    onClick={drawNumber}
+    disabled={remainingNumbers.length === 0 || winner !== ''}
+  >
+    Draw Bingo Number
+  </button>
+
+  <button onClick={() => {
+    setCalled([]);
+    setLastNumber(null);
+    setRemainingNumbers(Array.from({ length: 75 }, (_, i) => i + 1));
+    setWinner('');
+  }}>
+    Reset
+  </button>
+
+  <p>Numbers Called: {called.length}/75</p>
+</div>
 
         <div className="mydiv bingo-panel">
           <p>Numbers called ({called.length}): {called.join(', ')}</p>
@@ -94,4 +140,11 @@ function Bingo() {
   );
 }
 
+
+
 export default Bingo;
+
+
+
+
+
