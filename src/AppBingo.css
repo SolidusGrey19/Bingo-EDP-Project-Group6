@@ -1,34 +1,222 @@
+/* ===== Bingo page ===== */
+
+/* overrides the blue App-header so the page starts at the top */
 .bingo-page {
   justify-content: flex-start;
-  padding: 20px 0;
+  padding: 24px 12px;
   font-size: 1rem;
 }
 
-.bingo-rule {
-  margin-top: 0;
+.bingo-container {
+  width: 100%;
+  max-width: 1200px;
 }
 
-.bingo-panel {
-  color: #425B9A;
-  text-align: center;
-  max-width: 600px;
-  margin-bottom: 15px;
-}
-
-.bingo-last {
+/* ----- title ----- */
+.page-header h1 {
+  margin: 0;
   font-size: 3rem;
+  letter-spacing: 0.25em;
+  color: #FFF6DC;
+}
+
+.page-header p {
+  margin: 4px 0 20px;
+  color: #FF95A5;
+}
+
+/* ----- winner banner ----- */
+.winner-message {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  padding: 12px 20px;
+  background-color: #FFF6DC;
+  color: #425B9A;
+  border: 6px solid gold;
+  border-radius: 12px;
+  box-shadow: 0 0 20px gold;
+}
+
+.winner-message h2 {
+  margin: 0 0 4px;
+  color: #2e8b57;
+}
+
+.winner-message p {
+  margin: 0;
+}
+
+/* ----- game area ----- */
+.game-main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ----- cream boxes ----- */
+.game-panel {
+  background-color: #FFF6DC;
+  color: #425B9A;
+  border: 6px solid #76C0EC;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.game-panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+/* ----- number randomizer ----- */
+.randomizer {
+  margin-bottom: 20px;
+}
+
+.last-number {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #e0556d;
+}
+
+.randomizer p {
+  margin: 4px 0 12px;
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: #425B9A;
+  color: #FFF6DC;
+}
+
+.secondary-button {
+  background-color: #76C0EC;
+  color: #2d3b63;
+}
+
+.primary-button:hover:not(:disabled),
+.secondary-button:hover {
+  background-color: #ff0000;
+  color: #FFF6DC;
+}
+
+.primary-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.game-over {
+  margin: 12px 0 0;
   font-weight: bold;
   color: #e0556d;
 }
 
-.bingo-result {
-  color: green;
+/* ----- cards ----- */
+.cards-section {
+  margin-bottom: 20px;
 }
 
-.bingo-row {
+.cards-section h2 {
+  margin: 0 0 10px;
+  color: #FFF6DC;
+}
+
+.cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  padding: 0 10px;
+  gap: 14px;
+}
+
+.bingo-card {
+  background-color: #FFF6DC;
+  border: 5px solid #76C0EC;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* the card that has BINGO */
+.bingo-card.winning-card {
+  border-color: gold;
+  box-shadow: 0 0 18px gold;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #425B9A;
+}
+
+.winner-tag {
+  padding: 2px 8px;
+  border-radius: 10px;
+  background-color: gold;
+  color: #425B9A;
+  font-size: 0.7rem;
+}
+
+.bingo-card table {
+  border: 0;
+  padding: 0;
+  background: none;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+
+.bingo-card th {
+  width: 42px;
+  padding: 4px 0;
+  border-radius: 4px;
+  background-color: #425B9A;
+  color: white;
+}
+
+.bingo-card td {
+  padding: 8px 0;
+  border-radius: 4px;
+  background-color: white;
+  color: #425B9A;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* a called number (and the FREE space) */
+.bingo-card td.marked {
+  background-color: #e0556d;
+  color: white;
+  font-weight: bold;
+}
+
+/* ----- footer ----- */
+.bingo-footer {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ----- phones and small screens ----- */
+@media (max-width: 900px) {
+  .last-number {
+    font-size: 3rem;
+  }
 }
