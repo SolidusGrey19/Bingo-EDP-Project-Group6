@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.bingo-card {
+  border-collapse: separate;
+  border-spacing: 3px;
+  background-color: #FFF6DC;
+  border: 5px solid #76C0EC;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.bingo-card.winner {
+  border-color: gold;
+  box-shadow: 0 0 15px gold;
+}
+
+.bingo-letter {
+  background-color: #425B9A;
+  color: white;
+  width: 40px;
+  padding: 4px 0;
+  border-radius: 4px;
+}
+
+.bingo-cell {
+  background-color: white;
+  color: #425B9A;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.bingo-cell.marked {
+  background-color: #e0556d;
+  color: white;
+  font-weight: bold;
+}
